@@ -27,7 +27,7 @@ No providers.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_vpc"></a> [vpc](#module\_vpc) | terraform-aws-modules/vpc/aws | ~> 5.5.1 |
-| <a name="module_dns_zone"></a> [dns\_zone](#module\_dns\_zone) | git::https://github.com/nexient-llc/tf-aws-wrapper_module-dns_zone.git | feature/upgrade |
+| <a name="module_dns_zone"></a> [dns\_zone](#module\_dns\_zone) | git::https://github.com/nexient-llc/tf-aws-collection_module-dns_zone.git | 0.1.1 |
 | <a name="module_dns_record"></a> [dns\_record](#module\_dns\_record) | ../.. | n/a |
 
 ## Resources

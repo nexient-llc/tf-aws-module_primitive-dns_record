@@ -1,4 +1,4 @@
-# tf-aws-wrapper_module-dns_record
+# tf-aws-collection_module-dns_record
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC_BY--NC--ND_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
@@ -125,10 +125,10 @@ Currently, the `encrypt at transit` is not supported in terraform. There is an o
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-| Name | Version |
-|------|---------|
+| Name                                                                      | Version            |
+| ------------------------------------------------------------------------- | ------------------ |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0, <= 1.5.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws)                   | ~> 5.0             |
 
 ## Providers
 
@@ -136,8 +136,8 @@ No providers.
 
 ## Modules
 
-| Name | Source | Version |
-|------|--------|---------|
+| Name                                                      | Source                                             | Version   |
+| --------------------------------------------------------- | -------------------------------------------------- | --------- |
 | <a name="module_records"></a> [records](#module\_records) | terraform-aws-modules/route53/aws//modules/records | ~> 2.11.0 |
 
 ## Resources
@@ -146,18 +146,18 @@ No resources.
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_zone_name"></a> [zone\_name](#input\_zone\_name) | Name of the Route53 Zone to be created | `string` | `null` | no |
-| <a name="input_zone_id"></a> [zone\_id](#input\_zone\_id) | Zone ID of the hosted zone. Conflicts with zone\_name | `string` | `null` | no |
-| <a name="input_private_zone"></a> [private\_zone](#input\_private\_zone) | Whether the Zone is private or public. Default is private. | `bool` | `true` | no |
-| <a name="input_records"></a> [records](#input\_records) | List of DNS records - A, CNAME etc. to be created.<br>  name: name of the record to be created<br>  type: type or record - A, CNAME etc.<br>  ttl: time to live<br>  health\_check\_id: id of the health check<br>  records: IP Addresses, CIDRs or other DNS record names<br>  alias: Alias names for A and CNAME records<br>    Valid `alias` attributes are `name`, `zone_id` and `evaluate_target_health`.<br>    `alias` conflicts with `ttl` and `records` and vice-versa" | <pre>list(object({<br>    name            = string<br>    type            = string<br>    ttl             = optional(number)<br>    health_check_id = optional(string)<br>    records         = optional(list(string))<br>    alias           = map(string)<br>  }))</pre> | n/a | yes |
+| Name                                                                     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Type                                                                                                                                                                                                                                                                       | Default | Required |
+| ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | :------: |
+| <a name="input_zone_name"></a> [zone\_name](#input\_zone\_name)          | Name of the Route53 Zone to be created                                                                                                                                                                                                                                                                                                                                                                                                                                           | `string`                                                                                                                                                                                                                                                                   | `null`  |    no    |
+| <a name="input_zone_id"></a> [zone\_id](#input\_zone\_id)                | Zone ID of the hosted zone. Conflicts with zone\_name                                                                                                                                                                                                                                                                                                                                                                                                                            | `string`                                                                                                                                                                                                                                                                   | `null`  |    no    |
+| <a name="input_private_zone"></a> [private\_zone](#input\_private\_zone) | Whether the Zone is private or public. Default is private.                                                                                                                                                                                                                                                                                                                                                                                                                       | `bool`                                                                                                                                                                                                                                                                     | `true`  |    no    |
+| <a name="input_records"></a> [records](#input\_records)                  | List of DNS records - A, CNAME etc. to be created.<br>  name: name of the record to be created<br>  type: type or record - A, CNAME etc.<br>  ttl: time to live<br>  health\_check\_id: id of the health check<br>  records: IP Addresses, CIDRs or other DNS record names<br>  alias: Alias names for A and CNAME records<br>    Valid `alias` attributes are `name`, `zone_id` and `evaluate_target_health`.<br>    `alias` conflicts with `ttl` and `records` and vice-versa" | <pre>list(object({<br>    name            = string<br>    type            = string<br>    ttl             = optional(number)<br>    health_check_id = optional(string)<br>    records         = optional(list(string))<br>    alias           = map(string)<br>  }))</pre> | n/a     |   yes    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
+| Name                                                                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <a name="output_record_fqdns"></a> [record\_fqdns](#output\_record\_fqdns) | Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at  http://www.apache.org/licenses/LICENSE-2.0  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. |
-| <a name="output_record_names"></a> [record\_names](#output\_record\_names) | n/a |
-| <a name="output_zone_name"></a> [zone\_name](#output\_zone\_name) | n/a |
+| <a name="output_record_names"></a> [record\_names](#output\_record\_names) | n/a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| <a name="output_zone_name"></a> [zone\_name](#output\_zone\_name)          | n/a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

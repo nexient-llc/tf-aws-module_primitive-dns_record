@@ -25,7 +25,7 @@ module "vpc" {
 }
 
 module "dns_zone" {
-  source = "git::https://github.com/nexient-llc/tf-aws-wrapper_module-dns_zone.git?ref=feature/upgrade"
+  source = "git::https://github.com/nexient-llc/tf-aws-collection_module-dns_zone.git?ref=0.1.1"
 
   naming_prefix      = var.naming_prefix
   environment        = var.environment
