@@ -128,7 +128,7 @@ Currently, the `encrypt at transit` is not supported in terraform. There is an o
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0, <= 1.5.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.28.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
 
 ## Providers
 
@@ -138,7 +138,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_records"></a> [records](#module\_records) | terraform-aws-modules/route53/aws//modules/records | ~> 2.10.2 |
+| <a name="module_records"></a> [records](#module\_records) | terraform-aws-modules/route53/aws//modules/records | ~> 2.11.0 |
 
 ## Resources
 

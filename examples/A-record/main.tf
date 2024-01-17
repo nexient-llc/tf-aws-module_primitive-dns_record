@@ -12,7 +12,7 @@
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "~> 3.19.0"
+  version = "~> 5.5.1"
 
   name                 = var.vpc_name
   cidr                 = var.vpc_cidr
@@ -25,7 +25,7 @@ module "vpc" {
 }
 
 module "dns_zone" {
-  source = "git::https://github.com/nexient-llc/tf-aws-wrapper_module-dns_zone.git?ref=0.1.0"
+  source = "git::https://github.com/nexient-llc/tf-aws-wrapper_module-dns_zone.git?ref=feature/upgrade"
 
   naming_prefix      = var.naming_prefix
   environment        = var.environment
@@ -33,10 +33,11 @@ module "dns_zone" {
   resource_number    = var.resource_number
   region             = var.region
   resource_names_map = var.resource_names_map
-  zone_name          = var.zone_name
-  comment            = var.comment
-  force_destroy      = var.force_destroy
-  vpc_id             = module.vpc.vpc_id
+
+  zone_name     = var.zone_name
+  comment       = var.comment
+  force_destroy = var.force_destroy
+  vpc_id        = module.vpc.vpc_id
 
   tags = var.tags
 }
