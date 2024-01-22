@@ -13,15 +13,16 @@
 module "dns_zone" {
   source = "git::https://github.com/nexient-llc/tf-aws-collection_module-dns_zone.git?ref=fix/variables"
 
-  zones  = local.zones
+  zones  = var.zones
   create = var.create
   tags   = var.tags
 }
 
+# This example demonstrates creating multiple DNS records in a single DNS zone.
 module "dns_record" {
   source = "../.."
 
-  zone_id = local.zone_id
+  zone_id = local.zone_id[0]
   records = var.records
 
   depends_on = [module.dns_zone]
