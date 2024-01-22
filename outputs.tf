@@ -10,13 +10,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 output "record_fqdns" {
-  value = module.records.route53_record_fqdn
+  description = "FQDNs built using the zone domain and name."
+  value       = { for record in aws_route53_record.route53_record : record.name => record.fqdn }
 }
 
 output "record_names" {
-  value = module.records.route53_record_name
-}
-
-output "zone_name" {
-  value = var.zone_name
+  description = "The names of the record."
+  value       = [for record in aws_route53_record.route53_record : record.name]
 }
