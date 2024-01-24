@@ -45,5 +45,4 @@ No resources.
 | Name | Description |
 |------|-------------|
 | <a name="output_record_fqdns"></a> [record\_fqdns](#output\_record\_fqdns) | FQDNs built using the zone domain and name. |
-| <a name="output_record_names"></a> [record\_names](#output\_record\_names) | The names of the record. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
