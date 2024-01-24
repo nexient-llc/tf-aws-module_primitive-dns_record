@@ -11,7 +11,7 @@
 // limitations under the License.
 
 module "dns_zone" {
-  source = "git::https://github.com/nexient-llc/tf-aws-collection_module-dns_zone.git?ref=fix/variables"
+  source = "git::https://github.com/nexient-llc/tf-aws-collection_module-dns_zone.git?ref=0.1.2"
 
   zones  = var.zones
   create = var.create

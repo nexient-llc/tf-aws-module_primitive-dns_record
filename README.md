@@ -5,7 +5,8 @@
 
 ## Overview
 
-This terrform module creates Route53 DNS records in the zone corresponding to the input `zone_name`. Currently, this module is tested for creating `A record`, and `CNAME` record. But this module is capable to create all type of DNS records supported by Route-53
+This terrform module creates Route53 DNS records in the zone corresponding to the input `zone_id`. This module is capable to create all type of DNS records supported by Route-53
+
 ## Usage
 A sample variable file `example.tfvars` is available in the root directory which can be used to test this module. User needs to follow the below steps to execute this module
 1. Update the `example.tfvars` to manually enter values for all fields marked within `<>` to make the variable file usable

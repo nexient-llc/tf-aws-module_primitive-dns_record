@@ -1,7 +1,5 @@
-# AWS Route53 Private Record
-This module provisions dummy records (A record) in Private Hosted Zone with all its dependencies like
-- VPC
-- DNS Zone
+# AWS Route53 Record
+This module provisions a public `route 53` DNS zone along with `A` and `CNAME` record.
 
 ## Pre-requisites
 - Need to create a `provider.tf` with below contents
@@ -26,7 +24,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_dns_zone"></a> [dns\_zone](#module\_dns\_zone) | git::https://github.com/nexient-llc/tf-aws-collection_module-dns_zone.git | fix/variables |
+| <a name="module_dns_zone"></a> [dns\_zone](#module\_dns\_zone) | git::https://github.com/nexient-llc/tf-aws-collection_module-dns_zone.git | 0.1.2 |
 | <a name="module_dns_record"></a> [dns\_record](#module\_dns\_record) | ../.. | n/a |
 
 ## Resources
