@@ -1,4 +1,4 @@
-# tf-aws-collection_module-dns_record
+# tf-aws-module_primitive-dns_record
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC_BY--NC--ND_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
@@ -125,16 +125,16 @@ Currently, the `encrypt at transit` is not supported in terraform. There is an o
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-| Name | Version |
-|------|---------|
+| Name                                                                      | Version            |
+| ------------------------------------------------------------------------- | ------------------ |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0, <= 1.5.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws)                   | ~> 5.0             |
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.32.1 |
+| Name                                              | Version |
+| ------------------------------------------------- | ------- |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.32.1  |
 
 ## Modules
 
@@ -142,21 +142,21 @@ No modules.
 
 ## Resources
 
-| Name | Type |
-|------|------|
+| Name                                                                                                                            | Type     |
+| ------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | [aws_route53_record.route53_record](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_zone_id"></a> [zone\_id](#input\_zone\_id) | (Required) The ID of the hosted zone to contain this record. | `string` | n/a | yes |
-| <a name="input_records"></a> [records](#input\_records) | Records and their properties | <pre>map(object({<br>    type            = string<br>    ttl             = optional(number)<br>    name            = string<br>    records         = optional(list(string))<br>    set_identifier  = optional(string)<br>    health_check_id = optional(string)<br>    alias = optional(object({<br>      name                   = string<br>      zone_id                = string<br>      evaluate_target_health = bool<br>    }))<br>    cidr_routing_policy = optional(object({<br>      collection_id = string<br>      location_name = string<br>    }))<br>    failover_routing_policy = optional(object({<br>      type = string<br>    }))<br>    geolocation_routing_policy = optional(object({<br>      continent   = string<br>      country     = string<br>      subdivision = optional(string)<br>    }))<br>    latency_routing_policy = optional(object({<br>      region = string<br>    }))<br>    multivalue_answer_routing_policy = optional(bool)<br>    weighted_routing_policy = optional(object({<br>      weight = number<br>    }))<br>    allow_overwrite = optional(bool)<br>  }))</pre> | n/a | yes |
+| Name                                                      | Description                                                  | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Default | Required |
+| --------------------------------------------------------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | :------: |
+| <a name="input_zone_id"></a> [zone\_id](#input\_zone\_id) | (Required) The ID of the hosted zone to contain this record. | `string`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | n/a     |   yes    |
+| <a name="input_records"></a> [records](#input\_records)   | Records and their properties                                 | <pre>map(object({<br>    type            = string<br>    ttl             = optional(number)<br>    name            = string<br>    records         = optional(list(string))<br>    set_identifier  = optional(string)<br>    health_check_id = optional(string)<br>    alias = optional(object({<br>      name                   = string<br>      zone_id                = string<br>      evaluate_target_health = bool<br>    }))<br>    cidr_routing_policy = optional(object({<br>      collection_id = string<br>      location_name = string<br>    }))<br>    failover_routing_policy = optional(object({<br>      type = string<br>    }))<br>    geolocation_routing_policy = optional(object({<br>      continent   = string<br>      country     = string<br>      subdivision = optional(string)<br>    }))<br>    latency_routing_policy = optional(object({<br>      region = string<br>    }))<br>    multivalue_answer_routing_policy = optional(bool)<br>    weighted_routing_policy = optional(object({<br>      weight = number<br>    }))<br>    allow_overwrite = optional(bool)<br>  }))</pre> | n/a     |   yes    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
+| Name                                                                       | Description                                 |
+| -------------------------------------------------------------------------- | ------------------------------------------- |
 | <a name="output_record_fqdns"></a> [record\_fqdns](#output\_record\_fqdns) | FQDNs built using the zone domain and name. |
-| <a name="output_record_names"></a> [record\_names](#output\_record\_names) | The names of the record. |
+| <a name="output_record_names"></a> [record\_names](#output\_record\_names) | The names of the record.                    |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
