@@ -1,4 +1,4 @@
-module github.com/nexient-llc/tf-aws-wrapper_module-dns_record.git
+module github.com/nexient-llc/tf-aws-module_primitive-dns_record
 
 go 1.20
 

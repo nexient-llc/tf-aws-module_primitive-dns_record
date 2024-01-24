@@ -10,22 +10,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-output "vpc_id" {
-  value = module.vpc.vpc_id
+module "dns_zone" {
+  source = "git::https://github.com/nexient-llc/tf-aws-collection_module-dns_zone.git?ref=0.1.2"
+
+  zones  = var.zones
+  create = var.create
+  tags   = var.tags
 }
 
-output "zone_id" {
-  value = module.dns_zone.zone_id
-}
+# This example demonstrates creating multiple DNS records in a single DNS zone.
+module "dns_record" {
+  source = "../.."
 
-output "record_fqdn" {
-  value = module.dns_record.record_fqdns
-}
+  zone_id = local.zone_id[0]
+  records = var.records
 
-output "record_name" {
-  value = module.dns_record.record_names
-}
-
-output "zone_name" {
-  value = module.dns_zone.zone_name
+  depends_on = [module.dns_zone]
 }
