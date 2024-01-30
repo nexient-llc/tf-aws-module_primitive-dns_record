@@ -486,8 +486,6 @@ github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 h1:C3w9PqII01/Oq
 github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822/go.mod h1:+n7T8mK8HuQTcFwEeznm/DIxMOiR9yIdICNftLE1DvQ=
 github.com/nexient-llc/lcaf-component-terratest-common v0.0.0-20240126002307-4fd81b54916a h1:CNhRzD78Y8CkdcEB+RIfzkSXIQNkjYd3v61Vfjdqz0A=
 github.com/nexient-llc/lcaf-component-terratest-common v0.0.0-20240126002307-4fd81b54916a/go.mod h1:g3lD3RGQNlbd66ngNJnxA7hjjfEL+YAEksN0nxK9Ddc=
-github.com/nexient-llc/tf-caf-terratest-common v0.0.0-20240103182603-81528f60b82b h1:JUY+3sjM99zZVmL9Iugq0eMMvTuN/LcuzP1gOXyNSEw=
-github.com/nexient-llc/tf-caf-terratest-common v0.0.0-20240103182603-81528f60b82b/go.mod h1:m/nIPmz5ptmPeQoVuLP7OasfVvvEVvIz/+7KibgRvDE=
 github.com/onsi/ginkgo/v2 v2.9.1 h1:zie5Ly042PD3bsCvsSOPvRnFwyo3rKe64TJlD6nu0mk=
 github.com/onsi/gomega v1.27.4 h1:Z2AnStgsdSayCMDiCU42qIz+HLqEPcgiOCXjAU/w+8E=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=

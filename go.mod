@@ -5,7 +5,6 @@ go 1.20
 require (
 	github.com/gruntwork-io/terratest v0.43.12
 	github.com/nexient-llc/lcaf-component-terratest-common v0.0.0-20240126002307-4fd81b54916a
-	github.com/nexient-llc/tf-caf-terratest-common v0.0.0-20240103182603-81528f60b82b
 	github.com/stretchr/testify v1.8.1
 )
 
