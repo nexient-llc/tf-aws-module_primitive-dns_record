@@ -12,11 +12,11 @@ import (
 func TestNonComposableComplete(t *testing.T, ctx types.TestContext) {
 	t.Run("TestIsRecordExists", func(t *testing.T) {
 		if !testDataHaveDNSRecords(t, ctx) {
-			zone_ids := terraform.OutputMap(t, ctx.TerratestTerraformOptions, "route53_zone_zone_ids")
-			for zone_name := range zone_ids {
+			zoneIds := terraform.OutputMap(t, ctx.TerratestTerraformOptions, "route53_zone_zone_ids")
+			for zoneName := range zoneIds {
 				for _, rec := range ctx.TestConfig.(*ThisTFModuleConfig).Records {
-					fullQualifiedRecordName := rec.Name + "." + dns.NameNormalize(ctx.TestConfig.(*ThisTFModuleConfig).Zones[zone_name].Domain_name)
-					_, err := dns.LookupDNSRecordInPublicRoute53ZoneByDNSProtocol(t, zone_ids[zone_name], fullQualifiedRecordName, rec.Type)
+					fullQualifiedRecordName := rec.Name + "." + dns.NameNormalize(ctx.TestConfig.(*ThisTFModuleConfig).Zones[zoneName].Domain_name)
+					_, err := dns.LookupDNSRecordInPublicRoute53ZoneByDNSProtocol(t, zoneIds[zoneName], fullQualifiedRecordName, rec.Type)
 					assert.NoError(t, err, "can not find expected DNS record in AWS DNS: "+fullQualifiedRecordName)
 				}
 			}
