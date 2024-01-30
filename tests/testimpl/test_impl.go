@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestNonComposableComplete(t *testing.T, ctx types.TestContext) {
+func TestIsRecordExists(t *testing.T, ctx types.TestContext) {
 	t.Run("TestIsRecordExists", func(t *testing.T) {
 		if !testDataHaveDNSRecords(t, ctx) {
 			zoneIds := terraform.OutputMap(t, ctx.TerratestTerraformOptions, "route53_zone_zone_ids")

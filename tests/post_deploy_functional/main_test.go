@@ -18,5 +18,5 @@ func TestDNSZoneRecordsModule(t *testing.T) {
 	ctx := types.TestContext{
 		TestConfig: &testimpl.ThisTFModuleConfig{},
 	}
-	lib.RunSetupTestTeardown(t, testConfigsExamplesFolderDefault, infraTFVarFileNameDefault, ctx, testimpl.TestNonComposableComplete)
+	lib.RunSetupTestTeardown(t, testConfigsExamplesFolderDefault, infraTFVarFileNameDefault, ctx, testimpl.TestIsRecordExists)
 }
