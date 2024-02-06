@@ -31,7 +31,7 @@ type Records struct {
 	Set_identifier                   string                     `json:"set_identifier"`
 	Health_check_id                  string                     `json:"health_check_id"`
 	Alias                            Alias                      `json:"alias"`
-	Cider_routing_policy             Cider_routing_policy       `json:"cider_routing_policy"`
+	Cidr_routing_policy              Cidr_routing_policy        `json:"Cidr_routing_policy"`
 	Failover_routing_policy          Failover_routing_policy    `json:"failover_routing_policy"`
 	Geolocation_routing_policy       Geolocation_routing_policy `json:"geolocation_routing_policy"`
 	Latency_routing_policy           Latency_routing_policy     `json:"latency_routing_policy"`
@@ -46,7 +46,7 @@ type Alias struct {
 	Evaluate_target_health bool   `json:"evaluate_target_health"`
 }
 
-type Cider_routing_policy struct {
+type Cidr_routing_policy struct {
 	Collection_id string `json:"collection_id"`
 	Location_name string `json:"location_name"`
 }
@@ -56,9 +56,9 @@ type Failover_routing_policy struct {
 }
 
 type Geolocation_routing_policy struct {
-	Continent string `json:"continent"`
-	Country   string `json:"country"`
-	Subdivion string `json:"subdivion"`
+	Continent   string `json:"continent"`
+	Country     string `json:"country"`
+	Subdivision string `json:"Subdivision"`
 }
 
 type Latency_routing_policy struct {
