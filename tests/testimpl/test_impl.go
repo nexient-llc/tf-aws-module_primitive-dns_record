@@ -12,10 +12,10 @@ import (
 func TestDoesDNSZoneExist(t *testing.T, ctx types.TestContext) {
 	t.Run("TestIsZoneExist", func(t *testing.T) {
 		zoneIds := terraform.OutputMap(t, ctx.TerratestTerraformOptions, "route53_zone_zone_ids")
-		for zone_name := range zoneIds {
-			expected_zone_name := ctx.TestConfig.(*ThisTFModuleConfig).Zones[zone_name].Domain_name
-			zone := dns.GetHostedZoneById(t, zoneIds[zone_name])
-			assert.Equal(t, *zone.HostedZone.Name, dns.NameNormalize(expected_zone_name))
+		for zoneName := range zoneIds {
+			expectedZoneName := ctx.TestConfig.(*ThisTFModuleConfig).Zones[zoneName].Domain_name
+			zone := dns.GetHostedZoneById(t, zoneIds[zoneName])
+			assert.Equal(t, *zone.HostedZone.Name, dns.NameNormalize(expectedZoneName))
 		}
 	})
 }
@@ -24,10 +24,10 @@ func TestDoesDNSZoneRecordExist(t *testing.T, ctx types.TestContext) {
 	t.Run("TestIsRecordExists", func(t *testing.T) {
 		if !testDataHaveDNSRecords(t, ctx) {
 			zoneIds := terraform.OutputMap(t, ctx.TerratestTerraformOptions, "route53_zone_zone_ids")
-			for zone_name := range zoneIds {
+			for zoneName := range zoneIds {
 				for _, rec := range ctx.TestConfig.(*ThisTFModuleConfig).Records {
-					fullQualifiedRecordName := rec.Name + "." + dns.NameNormalize(ctx.TestConfig.(*ThisTFModuleConfig).Zones[zone_name].Domain_name)
-					_, err := dns.LookupDNSRecordInPublicRoute53ZoneByDNSProtocol(t, zoneIds[zone_name], fullQualifiedRecordName, rec.Type)
+					fullQualifiedRecordName := rec.Name + "." + dns.NameNormalize(ctx.TestConfig.(*ThisTFModuleConfig).Zones[zoneName].Domain_name)
+					_, err := dns.LookupDNSRecordInPublicRoute53ZoneByDNSProtocol(t, zoneIds[zoneName], fullQualifiedRecordName, rec.Type)
 					assert.NoError(t, err, "can not find expected DNS record in AWS DNS: "+fullQualifiedRecordName)
 				}
 			}
