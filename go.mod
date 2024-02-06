@@ -1,6 +1,8 @@
-module common
+module github.com/nexient-llc/tf-aws-module_primitive-dns_record
 
-go 1.20
+go 1.21
+
+toolchain go1.21.6
 
 require (
 	github.com/gruntwork-io/terratest v0.46.11
