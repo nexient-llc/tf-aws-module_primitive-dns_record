@@ -16,6 +16,6 @@ output "record_fqdns" {
 }
 
 output "route53_zone_zone_ids" {
-  description = "IDs of the records."
+  description = "Zone IDs of Route53 zone"
   value       = module.dns_zone.route53_zone_zone_ids
 }

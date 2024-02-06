@@ -24,20 +24,20 @@ type Vpc struct {
 }
 
 type Records struct {
-	Type                       string                     `json:"type"`
-	Ttl                        int                        `json:"ttl"`
-	Name                       string                     `json:"name"`
-	Records                    []string                   `json:"records"`
-	Set_identifier             string                     `json:"set_identifier"`
-	Health_check_id            string                     `json:"health_check_id"`
-	Alias                      Alias                      `json:"alias"`
-	Cidr_routing_policy        Cidr_routing_policy        `json:"cidr_routing_policy"`
-	Failover_routing_policy    string                     `json:"failover_routing_policy"`
-	Geolocation_routing_policy Geolocation_routing_policy `json:"geolocation_routing_policy"`
-	Latency_routing_policy     Latency_routing_policy     `json:"latency_routing_policy"`
-	Multivalue_answer_routing  bool                       `json:"multivalue_answer_routing"`
-	Weighted_routing_policy    Weighted_routing_policy    `json:"weighted_routing_policy"`
-	Allow_overwrite            bool                       `json:"allow_overwrite"`
+	Type                             string                     `json:"type"`
+	Ttl                              int                        `json:"ttl"`
+	Name                             string                     `json:"name"`
+	Records                          []string                   `json:"records"`
+	Set_identifier                   string                     `json:"set_identifier"`
+	Health_check_id                  string                     `json:"health_check_id"`
+	Alias                            Alias                      `json:"alias"`
+	Cidr_routing_policy              Cidr_routing_policy        `json:"Cidr_routing_policy"`
+	Failover_routing_policy          Failover_routing_policy    `json:"failover_routing_policy"`
+	Geolocation_routing_policy       Geolocation_routing_policy `json:"geolocation_routing_policy"`
+	Latency_routing_policy           Latency_routing_policy     `json:"latency_routing_policy"`
+	Multivalue_answer_routing_policy bool                       `json:"multivalue_routing_policy"`
+	Weighted_routing_policy          Weighted_routing_policy    `json:"weighted_routing_policy"`
+	Allow_overwrite                  bool                       `json:"allow_overwrite"`
 }
 
 type Alias struct {
@@ -58,7 +58,7 @@ type Failover_routing_policy struct {
 type Geolocation_routing_policy struct {
 	Continent   string `json:"continent"`
 	Country     string `json:"country"`
-	Subdivision string `json:"subdivision"`
+	Subdivision string `json:"Subdivision"`
 }
 
 type Latency_routing_policy struct {

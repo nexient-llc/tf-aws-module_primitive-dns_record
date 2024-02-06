@@ -49,5 +49,5 @@ No resources.
 | Name | Description |
 |------|-------------|
 | <a name="output_record_fqdns"></a> [record\_fqdns](#output\_record\_fqdns) | FQDNs built using the zone domain and name. |
-| <a name="output_route53_zone_zone_ids"></a> [route53\_zone\_zone\_ids](#output\_route53\_zone\_zone\_ids) | IDs of the records. |
+| <a name="output_route53_zone_zone_ids"></a> [route53\_zone\_zone\_ids](#output\_route53\_zone\_zone\_ids) | Zone IDs of Route53 zone |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
