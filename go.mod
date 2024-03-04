@@ -6,7 +6,7 @@ toolchain go1.21.6
 
 require (
 	github.com/gruntwork-io/terratest v0.46.11
-	github.com/nexient-llc/lcaf-component-terratest-common v1.0.2
+	github.com/nexient-llc/lcaf-component-terratest-common v1.0.3
 	github.com/stretchr/testify v1.8.4
 )
 
