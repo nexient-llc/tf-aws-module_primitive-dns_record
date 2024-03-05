@@ -135,7 +135,7 @@ Currently, the `encrypt at transit` is not supported in terraform. There is an o
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.32.1 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.35.0 |
 
 ## Modules
 

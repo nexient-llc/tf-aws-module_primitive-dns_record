@@ -15,8 +15,16 @@ const (
 
 func TestDNSZoneRecordsModule(t *testing.T) {
 
-	ctx := types.TestContext{
-		TestConfig: &testimpl.ThisTFModuleConfig{},
-	}
-	lib.RunSetupTestTeardown(t, testConfigsExamplesFolderDefault, infraTFVarFileNameDefault, ctx, testimpl.TestDoesDNSZoneExist, testimpl.TestDoesDNSZoneRecordExist)
+	ctx := types.CreateTestContextBuilder().
+		SetTestConfig(&testimpl.ThisTFModuleConfig{}).
+		SetTestConfigFolderName(testConfigsExamplesFolderDefault).
+		SetTestConfigFileName(infraTFVarFileNameDefault).
+		SetTestSpecificFlags(map[string]types.TestFlags{
+			"complete": {
+				"IS_TERRAFORM_IDEMPOTENT_APPLY": true,
+			},
+		}).
+		Build()
+
+	lib.RunSetupTestTeardown(t, *ctx, testimpl.TestDoesDNSZoneExist, testimpl.TestDoesDNSZoneRecordExist)
 }

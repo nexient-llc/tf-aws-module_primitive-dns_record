@@ -27,7 +27,6 @@ variable "zone_id" {
   type        = string
 }
 
-
 variable "records" {
   type = map(object({
     type            = string
