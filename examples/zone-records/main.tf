@@ -11,11 +11,10 @@
 // limitations under the License.
 
 module "dns_zone" {
-  source = "git::https://github.com/nexient-llc/tf-aws-module_primitive-dns_zone.git?ref=0.1.2"
+  source = "git::https://github.com/nexient-llc/tf-aws-module_primitive-dns_zone.git?ref=0.1.4"
 
-  zones  = var.zones
-  create = var.create
-  tags   = var.tags
+  zones = var.zones
+  tags  = var.tags
 }
 
 # This example demonstrates creating multiple DNS records in a single DNS zone.
